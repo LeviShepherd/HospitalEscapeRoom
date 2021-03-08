@@ -138,8 +138,6 @@ void PsychWardRoom::goForward(){
 
 void PsychWardRoom::exitRoom(){
     // To-Do
-    cout << endl;
-    cout << endl;
 }
 
 void PsychWardRoom::execute(){
