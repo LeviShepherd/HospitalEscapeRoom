@@ -1,6 +1,8 @@
 #include "psychwardroom.h"
 #include <iostream>
 
+// you can find the keycard from the cabinet choice on line 63 infinitely
+
 // Author: Levi Shepherd
 
 PsychWardRoom::PsychWardRoom()

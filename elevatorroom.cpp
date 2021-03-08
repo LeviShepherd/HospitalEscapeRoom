@@ -1,6 +1,10 @@
 #include "elevatorroom.h"
 #include <iostream>
 
+// when you get to this room and it asks you what you would like to do it automatically prints "Invalid selection, try again"
+// spaces (or newlines) are missing from the cout statement for the room's description
+// space missing from the cout statement that continues on the next line for if they "Investigate the scatter files"
+
 ElevatorRoom::ElevatorRoom()
 {
 

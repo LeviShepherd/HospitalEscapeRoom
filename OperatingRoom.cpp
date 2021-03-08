@@ -2,6 +2,7 @@
 // Created by Ty Hobbs on 2/14/21.
 //
 
+// a few spaces are missing in the cout statements
 // lines with issues: 91
 
 #include "OperatingRoom.h"

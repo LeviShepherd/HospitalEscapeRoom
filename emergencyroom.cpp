@@ -3,12 +3,14 @@
 using namespace std;
 
 /*
- * Todo list:
- * Implement scoring
+ * Todo list after test:
+ * change to let user guess until correct
+ * change option 6 Code Guess to a better name
+ * option 6 Code Guess print Invalid Input
+ * implement execute function (and make sure to change it in main)
 */
 
 // lines with issues: 137, the part with the code is a little confusing with number 5 and number 6, but a really cool room!
-// github test
 
 room2::room2() {
     int menuIndex;
