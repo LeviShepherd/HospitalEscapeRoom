@@ -1,9 +1,9 @@
 //
 // Created by Ty Hobbs on 2/14/21.
+//Updated 3/11/21
 //
 
-// a few spaces are missing in the cout statements
-// lines with issues: 91
+
 
 #include "OperatingRoom.h"
 
@@ -22,13 +22,14 @@ void OperatingRoom::setPlayerName(string playerName) {
 
 void OperatingRoom::showRoomStory(){
     //Opening story line for the game.
-    cout << "Welcome " << playerName << "You awake laying on a cold OR table.  The room is dark and no one is around.  You attempt to call for"
-            "help but no on comes.  You notice that your arm is padlocked to the OR table." << endl;
+    cout << "Welcome " << playerName << "You awake laying on a cold OR table. \nThe room is dark and no one is around.  You attempt to call for"
+            "help but no on comes.  \nYou notice that your arm is padlocked to the OR table." << endl;
 }
 
 void OperatingRoom::unlockFromTable(){
     //Class function that is used for the player to unlock themself from the OR table.
-    cout << "You look at the lock and notice it is a pattern game that is a sequence for the combination.  The"
+    cout << ""<<endl;
+    cout << "You look at the lock and notice it is a pattern game that is a sequence for the combination.  \nThe "
             "game is partially started."<< endl;
 
     int missingNum; //variable for the missing number of the puzzle.
@@ -48,7 +49,7 @@ void OperatingRoom::unlockFromTable(){
 
     //If successful
     cout <<  "The padlock falls off and the chain clanks on the ground.  You are freed from the table."
-             "It is time to get out of here but as you move towards the door you are halted to a stop by a tube connected to your "
+             "\nIt is time to get out of here but as you move towards the door you are halted to a stop \nby a tube connected to your "
              "body.  It has a sign attached that says do not yank out or you will pay a price." << endl;
 
 } //End of unlockFromTable
@@ -57,7 +58,7 @@ void OperatingRoom::freeFromIVPump(){
     //Function that allows for the user to unlock from the IV pump in the game
 
     cout << "You follow the tube back and realize you are hooked up to a IV pump that needs a code to be unlocked.  "
-            "There is a note attached that says look around for clues." << endl;
+            "\nThere is a note attached that says look around for clues." << endl;
     int secretCode; //3059
     int selection; //Variable to hold user selection.
     int medBoxLockSelection;  //Variable to hold med box selection.
@@ -67,15 +68,15 @@ void OperatingRoom::freeFromIVPump(){
         cout << "1.  Look at nearby phone" << endl;
         cout << "2.  Look at beside table" << endl;
         cout << "3.  Look at locked medicine cabinet" << endl;
-        cout << "4. Enter Code into IV Pump" << endl;
+        cout << "4.  Enter Code into IV Pump" << endl;
         cout << "Enter your selection : " << endl;
         cin >> selection;
 
         if (selection == 1){
             //Phone Choice
             cout << "Wow a phone, maybe I can call for help. But when you put the headset to your ear it is dead."
-                    "So you decide to examine the phone a little closer. "
-                    "It is a hospital phone that with speed dial labels to different units. There is a also a orange"
+                    "\nSo you decide to examine the phone a little closer. "
+                    "\nIt is a hospital phone that with speed dial labels to different units. \nThere is a also a orange 1"
                     "label on it that says In Case of a Emergency dial 911" << endl;
         }else if(selection == 2){
             //Bedside table choice.
@@ -91,10 +92,13 @@ void OperatingRoom::freeFromIVPump(){
                 cout << "To Unlock Enter a 3 Digit Code" << endl;
                 int code;
                 cout << "Enter code: " << endl;
-                cin >> code; // needs a print message for in wrong code is entered
+                cin >> code;
                 if (code == 911){
                     cout << "Door Opens to reveal a piece of paper hanging on the back" << endl;
                     cout << "3059" << endl;
+                }else{
+                    cout <<"----------"<<endl;
+                    cout << "Wrong Code, better look harder!!!"<<endl;
                 }
 
             }else if(medBoxLockSelection == 2){
@@ -108,7 +112,8 @@ void OperatingRoom::freeFromIVPump(){
             if (secretCode == 3059){
                 cout << "Correct, the IV pump door opens up and you are released." << endl;
             }else{
-                cout << "Wrong Code" << endl;
+                cout <<"----------"<<endl;
+                cout << "Wrong Code!! You may never get out!!" << endl;
             }
         }
 
