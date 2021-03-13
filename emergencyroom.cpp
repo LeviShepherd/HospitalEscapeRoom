@@ -2,18 +2,7 @@
 #include <iostream>
 using namespace std;
 
-/*
- * Todo list after test:
- * change to let user guess until correct
- * change option 6 Code Guess to a better name
- * option 6 Code Guess print Invalid Input
- * implement execute function (and make sure to change it in main)
-*/
-
-// lines with issues: 137, the part with the code is a little confusing with number 5 and number 6, but a really cool room!
-
 room2::room2() {
-    int menuIndex;
     code = 2187;
     idCard = false;
     vendingMachineDestroyed = false;
@@ -22,7 +11,12 @@ room2::room2() {
     codeNum2 = -1;
     codeNum3 = -1;
     codeNum4 = -1;
+}
 
+
+
+void room2::execute() {
+    int menuIndex;
     cout << "----------" << endl;
     cout << "You enter the Emergency Department. Suddenly, the door slams shut behind you! You desperately try to open it again but it's no use the door won't budge. ";
     cout << "How could this happen, you think to yourself, I'm smarter than this!" << endl;
@@ -34,7 +28,7 @@ room2::room2() {
         cout << "3. One of the rooms for patients behind a curtain." << endl;
         cout << "4. One of the other patient rooms behind a curtain." << endl;
         cout << "5. The door at the end of the room." << endl;
-        cout << "6. Code guess." << endl;
+        cout << "6. Keep track of code." << endl;
         cin >> menuIndex;
         if (menuIndex == 1) {
             room2::desk();
@@ -62,10 +56,9 @@ room2::room2() {
 
 
 
-
-
 void room2::desk() { // called by option 1, code number 2
     int menuIndex = 0;
+    int guess = 0;
     cout << "You approach the desk. The floor around it is filled with overturned objects and paperwork for patients. You notice a computer giving off a dim light." << endl;
 
     while (menuIndex != 3) {
@@ -88,6 +81,16 @@ void room2::desk() { // called by option 1, code number 2
             cout << "Thrawn" << endl;
             cout << "Winter" << endl;
             cout << "Onasi" << endl;
+            while (guess != 2) {
+                cout << "X = ?: " << endl;
+                cin >> guess;
+                if (guess == 2) {
+                    cout << "Correct." << endl;
+                }
+                else {
+                    cout << "Incorrect." << endl;
+                }
+            }
         }
         else if (menuIndex == 3) {
             cout << "You return to where you started." << endl;
@@ -100,11 +103,9 @@ void room2::desk() { // called by option 1, code number 2
 
 
 
-
-
 void room2::employeeOnlyRoom() { // called by option 2, code number 1
     int menuIndex = 1;
-    int guess;
+    int guess = 0;
     cout << "You go behind the desk and enter the employee only room. The door seems to have been left open to by whoever was here before. ";
     cout << "It's a small room but it seems to be a room for employee's to go on their lunch break or after their shift. ";
     cout << "There is a table with chairs around it and papers on top, a small vending machine with a few items, and a coat hangar that still has a doctor's lab coat on it in the corner." << endl;
@@ -136,8 +137,16 @@ void room2::employeeOnlyRoom() { // called by option 2, code number 1
                         cout << "After its destroyed you reach in and grab a hold of what appears to be a can of Coke with another note wrapped around it." << endl;
                         cout << "The note shows an equation: " << endl;
                         cout << "(7 + X/7) * (7 + 7) = 100" << endl; // answer is 1
-                        cout << "X = ?: " << endl;
-                        cin >> guess; // causes endless loop if you guess wrong and/ or wont let you try again
+                        while (guess != 1) {
+                            cout << "X = ?: " << endl;
+                            cin >> guess; // causes endless loop if you guess wrong and/ or wont let you try again
+                            if (guess == 1) {
+                                cout << "Correct." << endl;
+                            }
+                            else {
+                                cout << "Incorrect." << endl;
+                            }
+                        }
                         vendingMachineDestroyed = true;
                         break;
                     }
@@ -154,7 +163,10 @@ void room2::employeeOnlyRoom() { // called by option 2, code number 1
                 cout << "The vending machine is destroyed. You step away from the vending machine." << endl;
                 cout << "The note you found says: " << endl;
                 cout << "(7 + X/7) * (7 + 7) = 100" << endl; // answer is 1
-                cout << "X = ?: " << endl;
+                while (guess != 1) {
+                    cout << "X = ?" << endl;
+                    cin >> guess;
+                }
             }
         }
         else if (menuIndex == 3) {
@@ -171,10 +183,8 @@ void room2::employeeOnlyRoom() { // called by option 2, code number 1
 
 
 
-
-
 void room2::patientRoom() { // called by option 3, code number 8
-    int guess;
+    int guess = 0;
     int menuIndex = 0;
 
     cout << "You approach the room opening the curtain. Inside the room you see a bed and a counter with cabinets, a sink, and paperwork on it." << endl;
@@ -197,8 +207,16 @@ void room2::patientRoom() { // called by option 3, code number 8
             cout << "You rummage through the paperwork and stumble upon a note: " << endl;
             cout << "\"You've found the third puzzle/digit you're almost there Luke! This puzzle is all about logarithms.\"" << endl;
             cout << "Sequence pairs: 4  2 - 16  4 - 64  6 - 256  X" << endl; // answer is 8
-            cout << "X = ?" << endl;
-            cin >> guess;
+            while (guess != 8) {
+                cout << "X = ?" << endl;
+                cin >> guess;
+                if (guess == 8) {
+                    cout << "Correct." << endl;
+                }
+                else {
+                    cout << "Incorrect." << endl;
+                }
+            }
         }
         else if (menuIndex == 4) {
             cout << "You open all the cabinets and look inside. There are standard tools you'd expect to find in a hospital, notihng that seems too useful." << endl;
@@ -214,10 +232,9 @@ void room2::patientRoom() { // called by option 3, code number 8
 
 
 
-
-
 void room2::patientRoom2() { // called by option 4, code number 7
     int menuIndex = 0;
+    int guess = 0;
     cout << "You approach the room opening the curtain. Inside you see a patient room with a bed and a counter with cabinets and a sink. ";
     cout << "You also see a positionable light above the bed." << endl;
 
@@ -247,6 +264,15 @@ void room2::patientRoom2() { // called by option 4, code number 7
             cout << "EIOVABWJAMSEVENT" << endl;
             //                 ^^^^^ 7
             // put two in because I wasn't sure how difficult this would be
+            while (guess != 7) {
+                cin >> guess;
+                if (guess == 7) {
+                    cout << "Correct." << endl;
+                }
+                else {
+                    cout << "Incorrect." << endl;
+                }
+            }
         }
         else if (menuIndex == 4) {
             cout << "You open all the cabinets and look inside. There are standard tools you'd expect to find in a hospital, notihng that seems too useful." << endl;
@@ -259,8 +285,6 @@ void room2::patientRoom2() { // called by option 4, code number 7
         }
     }
 }
-
-
 
 
 
@@ -314,6 +338,8 @@ void room2::exit() { // called by option 5
         }
     }
 }
+
+
 
 void room2::codeGuesses() { // called by option 6
     int guess;
@@ -398,6 +424,9 @@ void room2::codeGuesses() { // called by option 6
         }
         else if (menuIndex == 6) {
             cout << "You return to where you started." << endl;
+        }
+        else {
+            cout << "Invalid input." << endl;
         }
     }
 

@@ -150,15 +150,14 @@ void startGame () {
     
     // declare a room object for each of the room classes
     OperatingRoom room1(userName);
-    //room2 room2;
+    room2 room2;
     PsychWardRoom room3(userName);
     ElevatorRoom room4;
     LobbyRoom room5;
 
     // run each rooms game play
-    room1.execute();
-     //room2.execute();
-    room2 room2;
+     room1.execute();
+     room2.execute();
      room3.execute();
      room4.execute();
      room5.execute();

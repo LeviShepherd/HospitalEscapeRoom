@@ -5,6 +5,7 @@
 class room2 {
 public:
     room2(); // constructor called upon creation of object
+    void execute();
     void desk(); //index 1 on menu
     void employeeOnlyRoom(); // index 2 on menu
     void patientRoom(); // index 3 on menu
