@@ -61,6 +61,7 @@ void PsychWardRoom::getOfficeChoice(){
         cout << "What is your dicision? ";
         cin >> officeChoice;
         if((officeChoice == "cabinet") || (officeChoice == "Cabinet")){
+            cout << endl;
             cout << "Digging through the cabinet you find a small card under some medical records.." << endl;
             cout << "Reading the card you see the name 'Dr. Strange' but the picture on the card seems blurred out." << endl;
             cout << "Flipping the card over you see there is a sort of barcode strip, a keycard ID maybe?" << endl;
@@ -68,23 +69,29 @@ void PsychWardRoom::getOfficeChoice(){
             exit = true;
         }
         else if((officeChoice == "drawer") || (officeChoice == "Drawer")){
+            cout << endl;
             cout << "You find a note scribbled on a scrap of paper.." << endl;
             cout << "The note reads: Employees should only use the hallway entry and avoid using the ER doorway!" << endl;
             cout << "This could be a clue.." << endl;
         }
         else if((officeChoice == "bin") || (officeChoice == "Bin")){
+            cout << endl;
             cout << "You find nothing of value.. unless you value trash?" << endl;
         }
         else {
+            cout << endl;
             cout << "Invalid selection, please choose cabinet, drawer or bin." << endl;
         }
     }
-
+    cout << endl;
     cout << "Feeling you've found all you could find, you head back to the check-in area." << endl;
     this->getPlayerChoice();
 }
 
 void PsychWardRoom::showRoomStory(){
+    cout << endl;
+    cout << endl;
+    cout << endl;
     cout << "Exiting the dark ER through the double doors you begin to gather your surroundings." << endl;
     cout << "The air around you is cool and damp, there is total silence throughout the area." << endl;
     cout << endl;
@@ -99,6 +106,8 @@ void PsychWardRoom::showRoomStory(){
 }
 
 void PsychWardRoom::goLeft(){
+    cout << endl;
+    cout << endl;
     cout << "You make your way towards the sound of screams (Are you CRAZY??) and stop short of a door" << endl;
     cout << "Above the door hangs a sign reading: Holding Cell 1 DO NOT OPEN" << endl;
     cout << "You begin to wonder to yourself.. What is inside?" << endl;
@@ -110,16 +119,20 @@ void PsychWardRoom::goLeft(){
 }
 
 void PsychWardRoom::goRight(){
+    cout << endl;
+    cout << endl;
     cout << "You approach the hallway, dimly lit with few lights flickering in the distance." << endl;
     cout << "As you creep forward there's a door at the end of the hallway." << endl;
     cout << "'Employees Only' the sign on the door reads.  There is a terminal next to the door." << endl;
     cout << "Looking at the terminal it seems to still be working.  The terminal asks for you to insert a keycard." << endl;
     if(keycard){
+        cout << endl;
         cout << "Digging into your pocket you retrieve the keycard and insert it into the terminal." << endl;
         cout << "The terminal glows green and you hear a faint chime.  The terminal now reads: OPEN" << endl;
         cout << "You grab the door handle, pulling the door open and step inside." << endl;
         this->exitRoom();
     } else {
+        cout << endl;
         cout << "You reach into your pockets- empty.  Looks like it's time to find another way." << endl;
         cout << "Perhaps you can find a keycard in here somewhere.." << endl;
         this->getPlayerChoice();
@@ -127,6 +140,8 @@ void PsychWardRoom::goRight(){
 }
 
 void PsychWardRoom::goForward(){
+    cout << endl;
+    cout << endl;
     cout << "Remembering the sounds of pans hitting the floor, you move into the area ahead." << endl;
     cout << "The room ahead of you looks to be a small lounge area or breakroom with a small kitchen." << endl;
     cout << "There are pots and pans strung out around the cabinets and blood in the sink, gross!" << endl;
@@ -139,7 +154,7 @@ void PsychWardRoom::goForward(){
 }
 
 void PsychWardRoom::exitRoom(){
-    // To-Do
+    // Placeholder
 }
 
 void PsychWardRoom::execute(){
